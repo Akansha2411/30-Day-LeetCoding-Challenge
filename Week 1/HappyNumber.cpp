@@ -57,7 +57,7 @@ Numbers that are happy, follow a sequence that ends in 1. All non-happy numbers 
  
 // method return true if n is Happy Number 
 // numSquareSum method is given in below detailed code snippet 
-
+/*
 int numSquareSum(int n) 
 { 
     int squareSum = 0; 
