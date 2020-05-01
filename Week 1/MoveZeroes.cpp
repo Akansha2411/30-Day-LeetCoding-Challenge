@@ -22,11 +22,25 @@ using namespace std;
 
 class Solution {
 public:
-    void moveZeroes(vector<int>& nums) {
-        int k = 0;
-        for(int i = 0;i<nums.size();i++)
-            if(nums[i]!=0)
-                swap(nums[i],nums[k++]);
+    void moveZeroes(vector<int>& nums) 
+    {
+        int count = 0;
+        for(int i=0;i<nums.size();i++)
+        {
+            if(nums[i] == 0)
+            {
+                nums.erase(nums.begin()+i);
+                i-=1;
+                count++;
+            }
+        }
+        for(int i=0;i<count;i++)
+        {
+            int x = 0;
+            nums.push_back(x);
+        }
+       // return nums;
+        
     }
 };
 
