@@ -50,29 +50,9 @@ public:
             fast=fast->next->next;
             slow=slow->next;
         }
+        head = slow
         
-        return slow;
+        return head;
     }
 };
 
-ListNode* vectorToLinkedList(vector<int> vec)                         //copying array elements and create linked list
-{
-    ListNode *temp = new ListNode(vec[0]);
-    ListNode *head = temp;
-    for(int i=1;i<vec.size();i++)
-    {
-        ListNode *temp2= new ListNode(vec[i]);
-        temp->next= temp2;
-        temp=temp2;
-    }
-    return head;
-}
-
-int main()
-{
-    Solution obj;
-    vector<int> vec = {1,2,3,4,5,6};
-    ListNode* head = vectorToLinkedList(vec);
-    cout<<obj.middleNode(head)->val;
-    return 0;
-}
