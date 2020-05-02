@@ -87,3 +87,60 @@ int main()
     cout<<obj.backspaceCompare("ab#c#","ad#c");
     return 0;
 }
+
+
+/* class Solution {
+public:
+    bool backspaceCompare(string S, string T) 
+    {
+        stack<char>Ss;
+        stack<char>St;
+        //if(Ss.empty() && S[0]!='#')Ss.push(S[0]);
+        for(int i=1;i<S.size();i++)
+        {
+            if(S[i] != '#')Ss.push(S[i]);
+            else if(!Ss.empty() && S[i] == '#')Ss.pop();
+            //else if(Ss.empty() && S[i]!='#')Ss.push(S[i]);
+            
+        }
+        //if(St.empty() && T[0]!='#')St.push(T[0]);
+        for(int i=1;i<T.size();i++)
+        {
+            if(T[i] != '#')St.push(T[i]);
+            else if(!St.empty() && T[i] == '#')St.pop();
+            //else if(St.empty() && T[i]!='#')St.push(T[i]);
+            
+        }
+        bool flag = true; 
+  
+    // Check if size of both stacks are same 
+        if (St.size() != Ss.size()) 
+        { 
+            flag = false; 
+            return flag; 
+        } 
+
+        // Until the stacks are not empty 
+        // compare top of both stacks 
+        while (Ss.empty() == false) 
+        { 
+            // If the top elements of both stacks 
+            // are same 
+            if (St.top() == Ss.top()) 
+            { 
+                // Pop top of both stacks 
+                //cout<<Ss.top()<<" "<<St.top();
+                Ss.pop(); 
+                St.pop(); 
+            } 
+            else 
+            { 
+                // Otherwise, set flag to false 
+                flag = false; 
+                break; 
+            } 
+        } 
+        return flag;
+        
+    }
+};
