@@ -65,3 +65,24 @@ int main()
     cout<<Solution().lastStoneWeight(value);
     return 0;
 }
+
+
+// A much simpler solution
+
+/* class Solution {
+public:
+    int lastStoneWeight(vector<int>& stones) 
+    {
+        
+        int n = stones.size(); //8 7 4 2 1 1
+        while(n>1)
+        {
+            sort(stones.begin(),stones.end());
+            stones[n-2] = stones[n-1]-stones[n-2];
+            n--;
+        }
+        return stones[0];
+        
+        
+    }
+}; */
