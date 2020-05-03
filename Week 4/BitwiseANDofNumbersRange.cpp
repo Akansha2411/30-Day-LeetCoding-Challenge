@@ -24,3 +24,16 @@ int main()
     cout<<Solution().rangeBitwiseAnd(5,7);
     return 0;
 }
+
+/* class Solution {
+public:
+    int rangeBitwiseAnd(int m, int n) 
+    {
+        int x = m;
+        for(int i=m;i<=n;i++)
+        {
+            x&=i;
+        }
+        return x;
+    }
+}; */ //linear gives timeout
